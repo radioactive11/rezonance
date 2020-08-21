@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Symphony</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <form action="#" method="post">
+            {% for i in range(0, length) %}
+                <p>
+                    <input type="radio"  name="selected" value="{{ song_ids[i] }}">
+                    <label for="{{ song_ids[i] }}">{{ song_names[i] }}</label>
+                </p>
+            {% endfor %}
+            <p><input type="submit" value="submit"></p>
+        </form>
+    </div>
+</body>
+</html>

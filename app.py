@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import url_for, redirect, render_template, request
-import search_resolve
+import search_resolve, show_recoms
 
 app = Flask(__name__)
 
@@ -9,7 +9,6 @@ app = Flask(__name__)
 def search_result(qry):
     if request.method == "POST":
         sid = request.form["selected"]
-        print(sid)
         return redirect(url_for("recom", id=sid))
     else:
         song_names, song_ids = search_resolve.get_results(qry)
@@ -27,8 +26,8 @@ def search():
 
 @app.route("/song_id=<id>")
 def recom(id):
-
-    return render_template("recom.html", id=id)
+    songs, curr = show_recoms.generate_recoms(id)
+    return render_template("recom.html", songs=songs, curr=curr)
 
 
 if __name__ == '__main__':
