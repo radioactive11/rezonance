@@ -1,28 +1,41 @@
-import numpy as np
+from google_images_download import google_images_download
 
 
-def get_recommendations(idx, cosine_sim):
-    sim_scores = list(enumerate(cosine_sim[idx]))
+def downloadimages(query):
+    response = google_images_download.googleimagesdownload()
+    # keywords is the search query
+    # format is the image file format
+    # limit is the number of images to be downloaded
+    # print urs is to print the image file url
+    # size is the image size which can
+    # be specified manually ("large, medium, icon")
+    # aspect ratio denotes the height width ratio
+    # of images to download. ("tall, square, wide, panoramic")
+    arguments = {"keywords": query,
+                 # "format": "jpg",
+                 "limit": 5,
+                 "print_urls": True}
+    # "size": "large"}
+    # "aspect_ratio": "panoramic" }
 
-    # Sort the songs based on the similarity scores
-    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    try:
+        response.download(arguments)
 
-    # Get the scores of the 10 most similar songs
-    sim_scores = sim_scores[1:11]
-    sim_scores.sort()
-    # Get the song indices
-    song_index = [i[0] for i in sim_scores]
-    song_index = song_index
-    # Return the top 10 most similar songs
-    return song_index
+    # Handling File NotFound Error
+    except FileNotFoundError:
+        arguments = {"keywords": query,
+                     "format": "jpg",
+                     "limit": 4,
+                     "print_urls": True,
+                     "size": "medium"}
 
-# sim = np.load("../data/sim.npy")
+        # Providing arguments for the searched query
+        try:
+            # Downloading the photos based
+            # on the given arguments
+            response.download(arguments)
+        except:
+            pass
 
 
-def trial(idx):
-    arr = np.load("light.npy")
-    print(type(arr[idx, 0]))
-
-# print(get_recommendations(1, sim))
-trial(1)
-
+downloadimages("oneplus")
