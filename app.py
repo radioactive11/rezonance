@@ -18,7 +18,7 @@ api.add_resource(Search, "/search")
 
 class Recommend(Resource):
     def post(self):
-        id = request.json["id"
+        id = request.json["id"]
         recommend = recoms.generate_recoms(id)
         return recommend
 
