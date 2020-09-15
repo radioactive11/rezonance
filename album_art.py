@@ -25,4 +25,4 @@ def album_art(song_name):
         f.write(main_container['src'])
     f.close()
 
-album_art("neon lights demi lovato")
+album_art("faded alan walker")
