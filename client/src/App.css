@@ -1,0 +1,21 @@
+body,html  {
+  margin: 0;
+  padding : 0;
+}
+.bg { 
+  background : linear-gradient(rgba(70,5,255,0.5),rgba(70,5,255,0.5)),
+  url("./bg2.jpg");
+  /* filter : blur(3px); */
+  filter : opacity(90%)
+}
+.image {
+  width : 100vw;
+  height : 100vh;
+  background-size: cover;
+  background-attachment: initial;
+}
+.heading {
+  margin : 0;
+  padding-left : 40%; 
+  color : white;
+}
