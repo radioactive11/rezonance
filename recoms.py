@@ -5,15 +5,17 @@ import pandas as pd
 def generate_recoms(idx):
     idx = int(idx)
     sim = np.load("data/light.npy")
-    df = pd.read_csv("data/song_artist.csv")
+    df = pd.read_csv("data/id2.csv")
     recoms_list = sim[idx, :]
     recommendation = []
     for i in range(0, 10):
         song_name = df.iloc[int(recoms_list[i]), 1]
         artist_name = df.iloc[int(recoms_list[i]), 2]
+        spotify_id = df.iloc[int(recoms_list[i]), 3]
         temp_dict = {
             "song_name": song_name,
-            "artist_name": artist_name
+            "artist_name": artist_name,
+            "spotify_id": spotify_id
         }
         recommendation.append(temp_dict)
     return recommendation
