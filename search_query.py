@@ -10,7 +10,7 @@ def query(param):
     
     ctr = 0
     for i in range(len(df_results)):
-        if ctr == 10:
+        if ctr == 100:
             break
         song_id = df_results.iloc[i, 0]
         song_name = df_results.iloc[i, 1]
