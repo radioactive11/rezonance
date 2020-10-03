@@ -3,3 +3,5 @@ pandas~=1.0.5
 Flask-RESTful~=0.3.8
 Flask-Cors==1.10.3
 gunicorn
+requests
+json
