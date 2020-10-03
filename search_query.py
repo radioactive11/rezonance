@@ -1,5 +1,5 @@
 import pandas as pd
-
+from scripts import spotify_api
 
 def query(param):
     ids = pd.read_csv("data/id2.csv")
@@ -10,17 +10,19 @@ def query(param):
     
     ctr = 0
     for i in range(len(df_results)):
-        if ctr == 100:
+        if ctr == 10:
             break
         song_id = df_results.iloc[i, 0]
         song_name = df_results.iloc[i, 1]
         song_artist = df_results.iloc[i, 2]
         spotify_id = df_results.iloc[i, 3]
+        image_url = spotify_api.get_imgurl(str(spotify_id))
         temp_dict = {
             "song": song_name,
             "artist": song_artist,
             "id": str(song_id),
-            "spotify_id": str(spotify_id)
+            "spotify_id": str(spotify_id),
+            "image_url": image_url
         }
         if song_id <= 50000:
             search_results.append(temp_dict)
