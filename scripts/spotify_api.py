@@ -42,8 +42,9 @@ def get_urls(track_id):
 
         try:
             prev_url = str(res["tracks"][0]["preview_url"])
-        except:
+        except Exception as e:
             prev_url = "error getting preview"
+            print(e)
             
         return img_url, prev_url
         
