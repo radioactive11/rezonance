@@ -16,7 +16,8 @@ def generate_recoms(idx):
         temp_dict = {
             "song_name": song_name,
             "artist_name": artist_name,
-            "spotify_id": spotify_id
+            "spotify_id": spotify_id,
+            "image_url": image_url
         }
         recommendation.append(temp_dict)
     return recommendation
