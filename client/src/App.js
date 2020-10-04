@@ -6,16 +6,22 @@ const App = () => {
   const [search,setSearch] = useState("");
   const [result,setResult] = useState({});
 
-  const output = (e) => {
-    e.preventDefault();
+  const getResults = (e) => {
     
-    axios.post("https://rezonance-radioactive11.herokuapp.com/search",{
-      search_param : search
-    })
-    .then((res) => {
-      console.log(res.data);
-      setResult(res.data);
-    })
+    setSearch(e.target.value);
+    console.log(e.target.value);
+
+    if((e.target.value).length %3 === 0 && ((e.target.value).length) !== 0) {
+
+      axios.post("http://localhost:5000/search",{
+        search_param : e.target.value
+      })
+      .then((res) => {
+        console.log(res.data);
+        setResult(res.data);
+      })
+    }
+    
   }
 
   return (
@@ -25,9 +31,9 @@ const App = () => {
         type ="text" 
         name = "search"
         value = {search}
-        onChange = {(e) => setSearch(e.target.value)}
+        onChange = {(e) => getResults(e)}
       />
-      <button type = "submit" onClick = {(e) => output(e)} > submit </button>
+      {/* <button type = "submit" onClick = {(e) => output(e)} > submit </button> */}
       <p>{JSON.stringify(result)}</p>
     </div>
 
