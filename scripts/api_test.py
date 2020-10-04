@@ -1,8 +1,8 @@
 import requests
 import json
 
-CLIENT_ID = ""
-CLIENT_SECRET = ""
+CLIENT_ID = "50179b9e0a064ad09ffb159682151c22"
+CLIENT_SECRET = "acd7f54eea1e4e70a6f35f7afbaee6cb"
 
 AUTH_URL = "https://accounts.spotify.com/api/token"
 
@@ -12,7 +12,6 @@ auth_response = requests.post(AUTH_URL, {
     'client_secret': CLIENT_SECRET,
 })
 
-# convert the response to JSON
 auth_response_data = auth_response.json()
 
 
@@ -23,19 +22,10 @@ headers = {
     'Authorization': 'Bearer {token}'.format(token=access_token)
 }
 
-
-
 BASE_URL = 'https://api.spotify.com/v1/'
 
-# Track ID from the URI
-track_id = '5d2Kn9oAAh9S2EbyCo1i52,2zFF6jG5hQArbzcXz3KUWk,4JpKVNYnVcJ8tuMKjAj50A'
-
-# actual GET request with proper header
+track_id = "34MJ07N9Bhu6iKPaxSVnCT"
 res = requests.get("https://api.spotify.com/v1/tracks/?ids={id}".format(id = track_id), headers=headers).json()
 
-# r_image = r["album"]["images"]
-# print(res['tracks'][i]["album"]["images"][0]["url"])
 
-for result in res["tracks"]:
-    print(result["album"]["images"][0]["url"])
-# print(r[0]['url'])
+print(res["tracks"][0]["preview_url"])
