@@ -28,8 +28,7 @@ BASE_URL = 'https://api.spotify.com/v1/'
 
 
 def get_imgurl(track_id):
-    try:
-        # Track ID from the URI
+    # Track ID from the URI
         
         # actual GET request with proper header
         res = requests.get("https://api.spotify.com/v1/tracks/?ids={id}".format(id = track_id), headers=headers).json()
@@ -38,6 +37,6 @@ def get_imgurl(track_id):
         img_url = res["tracks"][0]["album"]["images"][0]["url"]
 
         return str(img_url)
-    except Exception as e:
-        print(e)
         
+
+print(get_imgurl("0FDzzruyVECATHXKHFs9eJ"))
