@@ -27,5 +27,3 @@ def send_results():
         random_songs.append(temp_dict)
     return random_songs
 
-
-print(send_results())
