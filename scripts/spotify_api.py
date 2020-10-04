@@ -27,16 +27,24 @@ headers = {
 BASE_URL = 'https://api.spotify.com/v1/'
 
 
-def get_imgurl(track_id):
+def get_urls(track_id):
     # Track ID from the URI
         
         # actual GET request with proper header
         res = requests.get("https://api.spotify.com/v1/tracks/?ids={id}".format(id = track_id), headers=headers).json()
 
         # r_image = r["album"]["images"]
-        img_url = res["tracks"][0]["album"]["images"][0]["url"]
 
-        return str(img_url)
+        try:
+            img_url = str(res["tracks"][0]["album"]["images"][0]["url"])
+        except:
+            img_url = "error getting image"
+
+        try:
+            prev_url = str(res["tracks"][0]["preview_url"])
+        except:
+            prev_url = "error getting preview"
+            
+        return img_url, prev_url
         
 
-print(get_imgurl("0FDzzruyVECATHXKHFs9eJ"))
