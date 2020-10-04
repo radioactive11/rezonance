@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-
+from scripts import spotify_api
 
 def generate_recoms(idx):
     idx = int(idx)
@@ -12,10 +12,12 @@ def generate_recoms(idx):
         song_name = df.iloc[int(recoms_list[i]), 1]
         artist_name = df.iloc[int(recoms_list[i]), 2]
         spotify_id = df.iloc[int(recoms_list[i]), 3]
+        image_url = spotify_api.get_imgurl(str(spotify_id))
         temp_dict = {
             "song_name": song_name,
             "artist_name": artist_name,
-            "spotify_id": spotify_id
+            "spotify_id": spotify_id,
+            "image_url": image_url
         }
         recommendation.append(temp_dict)
     return recommendation

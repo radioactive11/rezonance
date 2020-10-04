@@ -28,14 +28,16 @@ BASE_URL = 'https://api.spotify.com/v1/'
 
 
 def get_imgurl(track_id):
-    # Track ID from the URI
-    
-    # actual GET request with proper header
-    res = requests.get("https://api.spotify.com/v1/tracks/?ids={id}".format(id = track_id), headers=headers).json()
+    try:
+        # Track ID from the URI
+        
+        # actual GET request with proper header
+        res = requests.get("https://api.spotify.com/v1/tracks/?ids={id}".format(id = track_id), headers=headers).json()
 
-    # r_image = r["album"]["images"]
-    img_url = res["tracks"][0]["album"]["images"][0]["url"]
+        # r_image = r["album"]["images"]
+        img_url = res["tracks"][0]["album"]["images"][0]["url"]
 
-    return str(img_url)
-
-print(get_imgurl("5d2Kn9oAAh9S2EbyCo1i52"))
+        return str(img_url)
+    except Exception as e:
+        print(e)
+        
