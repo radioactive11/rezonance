@@ -15,6 +15,8 @@ a:focus {
 
 body {
     /* font-family: "Poppins"; */
+    width : 100vw;
+    height : 100vh;
     font-family: 'Open Sans', sans-serif;
     background: #c31432;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
