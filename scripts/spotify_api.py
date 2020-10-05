@@ -40,12 +40,13 @@ def get_urls(track_id):
         
         # actual GET request with proper header
         res = requests.get("https://api.spotify.com/v1/tracks/?ids={id}".format(id = track_id), headers=headers).json()
-        print(res)
+        
         # r_image = r["album"]["images"]
 
         try:
             img_url = str(res["tracks"][0]["album"]["images"][0]["url"])
-        except:
+        except Exception as e:
+            print(e)
             img_url = "error getting image"
 
         try:
