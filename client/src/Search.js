@@ -27,7 +27,7 @@ const Search = () => {
     if((e.target.value).length %3 === 0 && ((e.target.value).length) !== 0) {
 
         //http://cors-anywhere.herokuapp.com/https://rezonance-radioactive11.herokuapp.com/search
-      axios.post("http://localhost:5000/search",{
+      axios.post("http://cors-anywhere.herokuapp.com/https://rezonance-radioactive11.herokuapp.com/search",{
         search_param : e.target.value
       })
       .then((res) => {
@@ -107,6 +107,7 @@ const Search = () => {
           : (
               <h1> Loading random songs </h1>
           )}
+
           </div>
       )}
 
