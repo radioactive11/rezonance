@@ -6,11 +6,13 @@ import search_query
 import recoms
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"*": {"origins": "*"}}, allow_headers="*", origin="*")
+
 api = Api(app)
 
 
 class Search(Resource):
+    @cross_origin()
     def post(self):
         param = request.json["search_param"]
         search_results = search_query.query(param)
