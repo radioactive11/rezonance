@@ -17,9 +17,13 @@ body {
     /* font-family: "Poppins"; */
     font-family: 'Open Sans', sans-serif;
     background: #c31432;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(45deg ,#434343 , 60%,#000000);; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: hsla(0, 5%, 5%, 1);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(hsla(0, 5%, 15%, 0.5)), to(hsla(0, 5%, 5%, 1)));
+  background-image: linear-gradient(to right top, hsla(0, 5%, 15%, 0.5), hsla(0, 5%, 5%, 1));
+  
+  background-image: -moz-linear-gradient(to right top, hsla(0, 5%, 15%, 0.5), hsla(0, 5%, 5%, 1));
     background-repeat: no-repeat;
     background-size : cover;
 }
@@ -72,8 +76,9 @@ body {
     bottom: 25px;
     left: 23px;
     color: #FFF;
-    font-size: 15px;
-    font-weight: bold;
+    font-weight: 450;
+    font-size: 13px;
+
     transition: all linear 0.25s;
 }
 

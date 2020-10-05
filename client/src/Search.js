@@ -15,12 +15,18 @@ const Search = () => {
     setSearch(e.target.value);
     console.log(e.target.value);
 
-    if((e.target.value).length %3 === 0 && ((e.target.value).length) !== 0) {
+    if((e.target.value).length >= 4 && ((e.target.value).length) !== 0) {
 
         //http://cors-anywhere.herokuapp.com/https://rezonance-radioactive11.herokuapp.com/search
-      axios.post("http://localhost:5000/search",{
-        search_param : e.target.value
-      })
+        axios.post("https://rezonance-radioactive11.herokuapp.com/search",{
+          search_param : e.target.value
+        },{
+          headers: {
+            "Content-Type": "application/json",
+          },
+              })
+              
+  
       .then((res) => {
         console.log(res.data.search_results);
         setResult(res.data.search_results);
