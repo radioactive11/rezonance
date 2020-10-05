@@ -6,8 +6,8 @@ import search_query
 import recoms
 
 app = Flask(__name__)
-CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app, resources={r"*": {"origins": "*"}}, allow_headers="*", origin="*")
+
 api = Api(app)
 
 
