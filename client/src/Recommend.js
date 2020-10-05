@@ -14,6 +14,12 @@ const Recommend = (props) => {
         })
     })
 
+    const playSong = (audio) => {
+        audio = new Audio(audio);
+        audio.load();
+        audio.play();
+    }
+    
     return (
         <div>
             {result && (     
@@ -22,13 +28,14 @@ const Recommend = (props) => {
 
           {result.map((songs) => (
             <div className="col-lg-4 col-md-6 col-sm-6 col-sm-12">
-        
+
+
               <div className="profile-card-2">
                 <img 
                   src={songs.image_url}
                   // src = "https://i.scdn.co/image/ab67616d0000b2731cbd0d5849b51c79c99e7b87" 
-                  className="img img-responsive" />
-    
+                  className="img img-responsive" onClick = {() => playSong(songs.preview)} />
+
                   <div className="profile-name">{songs.song_name}</div>
                   <div className="profile-username">{songs.artist_name}</div>
               </div>
