@@ -6,7 +6,7 @@ import search_query
 import recoms
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 api = Api(app)
 
 
