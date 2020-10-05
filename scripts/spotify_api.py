@@ -1,8 +1,10 @@
 import requests
 import json
+import os
 
-CLIENT_ID = "50179b9e0a064ad09ffb159682151c22"
-CLIENT_SECRET = "acd7f54eea1e4e70a6f35f7afbaee6cb"
+
+CLIENT_ID = os.environ['CLIENT_ID']
+CLIENT_SECRET = os.environ['CLIENT_SECRET']
 
 
 try:
@@ -38,16 +40,16 @@ except Exception as e:
 def get_urls(track_id):
     # Track ID from the URI
         
-        # actual GET request with proper header
+        # GET request to fetch details
         res = requests.get("https://api.spotify.com/v1/tracks/?ids={id}".format(id = track_id), headers=headers).json()
         
-        # r_image = r["album"]["images"]
+        
 
         try:
             img_url = str(res["tracks"][0]["album"]["images"][0]["url"])
         except Exception as e:
-            print(e)
             img_url = "error getting image"
+            print(e)
 
         try:
             prev_url = str(res["tracks"][0]["preview_url"])
