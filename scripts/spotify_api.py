@@ -56,7 +56,10 @@ def get_urls(track_id):
         except Exception as e:
             prev_url = "error getting preview"
             print(e)
-            
+
+        if prev_url == "None":
+            prev_url = "https://p.scdn.co/mp3-preview/cb1ae1f9e2f874dd2d19e4c29edb552777eb1e7a?cid=50179b9e0a064ad09ffb159682151c22"
+
         return img_url, prev_url
         
 
