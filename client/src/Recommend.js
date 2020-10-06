@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
 const Recommend = props => {
+  console.log(props);
   const [result,setResult] = useState([]);
   
   useEffect(() => {
@@ -50,7 +51,8 @@ const Recommend = props => {
   //bhai server restart krde
   return (
     <div>
-      {result && (
+      <h3 className ="heading-recommend">Song Recommendations {props.location.state.song} </h3> 
+     {result && (
         <div className="container">
           <div className="row">
             {result.map((songs,index) => (

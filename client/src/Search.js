@@ -47,23 +47,25 @@ const Search = () => {
     
   }
 
-  const getId = (id) => { 
+  const getId = (id,song) => { 
       console.log(id);
         history.push({
             pathname: '/recommend',
-            state: { id }
+            state: {id,song}
       })
   }
     
   console.log(result,"result",random,"random");
   
   return (
+    <div className="main">
       
-      <div>
+      <div class="button-container">
   <input type="text" placeholder="Search..." onChange = {(e) => getResults(e)} value = {search} />
-  {/* <div class="search"></div> */}
-{/* </div> */}
-         
+  <div class="search"></div>
+</div>
+
+           
     
       {result ?  (     
           <div className="container">
@@ -76,7 +78,7 @@ const Search = () => {
                 <img 
                   src={songs.image_url}
                   // src = "https://i.scdn.co/image/ab67616d0000b2731cbd0d5849b51c79c99e7b87" 
-                  className="img img-responsive" onClick={() => getId(songs.id) }/>
+                  className="img img-responsive" onClick={() => getId(songs.id,songs.song) }/>
     
                   <div className="profile-name">{songs.song}</div>
                   <div className="profile-username">{songs.artist}</div>
