@@ -4,7 +4,6 @@ import Axios from "axios";
 const Recommend = (props) => {
     
     const [result,setResult] = useState([]);
-	const [audios,setAudios] = useState([])
 
     useEffect(() => {
         Axios.post("https://rezonance-radioactive11.herokuapp.com/recommend",{

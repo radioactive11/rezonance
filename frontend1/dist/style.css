@@ -57,7 +57,7 @@ a:focus {
 body {
     width: 100vw;
     height : 100vh;
-    background: linear-gradient(to bottom, #232526, #414345);
+    background: linear-gradient(to top, #0099f7, #f11712);
     background-repeat: no-repeat;
     background-size : cover;
 }
@@ -89,35 +89,41 @@ body {
     background-position: center;
     overflow: hidden;
     position: relative;
-    margin: 10px auto;
+    margin: 10px aut00
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .profile-card-2 img {
-    filter: brightness(60%) blur(1%);
+    filter: brightness(60%);
     transition: all linear 0.25s;
 }
 
 .profile-card-2 .profile-name {
     position: absolute;
-    left: 20px;
-    bottom: 45px;
-    font-size: 23px;
+    left: 30px;
+    bottom: 70px;
+    font-size: 30px;
     color: #FFF;
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     font-weight: bold;
     transition: all linear 0.25s;
 }
 
+.profile-card-2 .profile-icons {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    color: #FFF;
+    transition: all linear 0.25s;
+}
 
 .profile-card-2 .profile-username {
     position: absolute;
-    bottom: 25px;
-    left: 23px;
+    bottom: 50px;
+    left: 30px;
     color: #FFF;
-    font-weight: 450;
-    font-size: 13px;
+    font-size: 15px;
     
     transition: all linear 0.25s;
 }
@@ -127,7 +133,7 @@ body {
 }
 
 .profile-card-2:hover img {
-    filter: grayscale(100%) blur(1px) brightness(30%);
+    filter: grayscale(100%) blur(1px) brightness(40%);
 }
 
 .profile-card-2:hover .profile-name {
