@@ -62,7 +62,9 @@ body {
     background-size : cover;
 }
 
-
+.text {
+    color : white;
+}
 
 .container-fluid,
 .container {

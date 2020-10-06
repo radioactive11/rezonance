@@ -1,8 +1,9 @@
 import requests
 import json
+import os
 
-CLIENT_ID = "50179b9e0a064ad09ffb159682151c22"
-CLIENT_SECRET = "acd7f54eea1e4e70a6f35f7afbaee6cb"
+CLIENT_ID = os.environ["CLIENT_ID"]
+CLIENT_SECRET = os.environ["CLIENT_SECRET"]
 
 AUTH_URL = "https://accounts.spotify.com/api/token"
 
