@@ -25,9 +25,13 @@ body {
     
     background-image: -moz-linear-gradient(to right top, hsla(0, 5%, 15%, 0.5), hsla(0, 5%, 5%, 1));
     background-repeat: no-repeat;
-    background-size : cover;
+    background-size :cover;
+    overflow-x : hidden;
 }
 
+/* .main {
+ 
+} */
 .container-fluid,
 .container {
     max-width: 100vw;
