@@ -58,14 +58,12 @@ const Search = () => {
   console.log(result,"result",random,"random");
   
   return (
-    <div className="main">
-      <input 
-        type ="text" 
-        name = "search"
-        value = {search}
-        onChange = {(e) => getResults(e)}
-      />
-    
+      
+      <div>
+  <input type="text" placeholder="Search..." onChange = {(e) => getResults(e)} value = {search} />
+  {/* <div class="search"></div> */}
+{/* </div> */}
+         
     
       {result ?  (     
           <div className="container">

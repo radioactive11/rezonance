@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
 const Recommend = props => {
-  const [result, setResult] = useState([]);
+  const [result,setResult] = useState([]);
   
   useEffect(() => {
     Axios.post("https://rezonance-radioactive11.herokuapp.com/recommend", {
