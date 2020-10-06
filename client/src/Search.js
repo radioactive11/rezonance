@@ -27,7 +27,6 @@ const Search = () => {
     if((e.target.value).length >= 4 && ((e.target.value).length) !== 0) {
 
         //http://cors-anywhere.herokuapp.com/https://rezonance-radioactive11.herokuapp.com/search
-<<<<<<< HEAD
         axios.post("https://rezonance-radioactive11.herokuapp.com/search",{
           search_param : e.target.value
         },{
@@ -37,11 +36,6 @@ const Search = () => {
               })
               
   
-=======
-      axios.post("http://cors-anywhere.herokuapp.com/https://rezonance-radioactive11.herokuapp.com/search",{
-        search_param : e.target.value
-      })
->>>>>>> e59ae0e70579dcdce1e956829a650b89550fadb8
       .then((res) => {
         console.log(res.data.search_results);
         setResult(res.data.search_results);
