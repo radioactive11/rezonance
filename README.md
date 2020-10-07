@@ -233,7 +233,7 @@ Website:  [https://rezonance.vercel.app](https://rezonance.vercel.app/)
 [forks-url]: https://github.com/radiaoctive11/rezonance/network/members
 [stars-shield]: https://img.shields.io/github/stars/radioactive11/rezonance.svg?style=flat-square
 [stars-url]: https://github.com/radiaoctive11/rezonance/stargazers
-[issues-shield]: https://img.shields.io/github/issues/radiaoctive11/rezonance.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/radioactive11/rezonance.svg?style=flat-square
 [issues-url]: https://github.com/radiaoctive11/rezonance/issues
 [license-shield]: https://img.shields.io/github/license/radioactive11/rezonance.svg?style=flat-square
 [license-url]: https://github.com/radiaoctive11/rezonance/blob/master/LICENSE.txt
