@@ -94,7 +94,7 @@ const Search = () => {
 					<div className ="heading-container">
 						<h1 className = "heading-recommend"> Search Results </h1>
 					</div>
-						result &&  (     
+						{result &&  (     
 							<div className="container">
 							<div className="row">
 				
@@ -115,7 +115,7 @@ const Search = () => {
 								}
 								</div>
 									</div>
-				  ) 
+				  )}
 				  </div>
 			  )}
 			  
