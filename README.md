@@ -44,7 +44,6 @@
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
-* [License](#license)
 * [Contact](#contact)
 
 
@@ -64,7 +63,7 @@
 
 Content-based filtering uses item features to recommend other items similar to what the user likes, based on their previous actions or explicit feedback.
 
-<img src = "STATIC_IMG/content.jpg" height="360" width="720">
+<img src = "STATIC_IMG/content.jpg" height="360" width="480">
 
 <br />
 
@@ -72,7 +71,7 @@ Content-based filtering uses item features to recommend other items similar to w
 
 Cosine similarity measures the similarity between two vectors by calculating the cosine of the angle between them. A simple visualization and the formula can be found below.
 
-<img src = "STATIC_IMG/cosine.png"  height="360" width="720">
+<img src = "STATIC_IMG/cosine.png"  height="360" width="480">
 
 <br />
 
@@ -228,17 +227,15 @@ Website:  [https://rezonance.vercel.app](https://rezonance.vercel.app/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/radiaoctive11/rezonance.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/radioactive11/rezonance.svg?style=flat-square
 [contributors-url]: https://github.com/radiaoctive11/rezonance/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/radiaoctive11/rezonance.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/radioactive11/rezonance.svg?style=flat-square
 [forks-url]: https://github.com/radiaoctive11/rezonance/network/members
-[stars-shield]: https://img.shields.io/github/stars/radiaoctive11/rezonance.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/radioactive11/rezonance.svg?style=flat-square
 [stars-url]: https://github.com/radiaoctive11/rezonance/stargazers
 [issues-shield]: https://img.shields.io/github/issues/radiaoctive11/rezonance.svg?style=flat-square
 [issues-url]: https://github.com/radiaoctive11/rezonance/issues
-[license-shield]: https://img.shields.io/github/license/radiaoctive11/rezonance.svg?style=flat-square
+[license-shield]: https://img.shields.io/github/license/radioactive11/rezonance.svg?style=flat-square
 [license-url]: https://github.com/radiaoctive11/rezonance/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: STATIC_IMG/vid.gif
 
