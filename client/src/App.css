@@ -48,7 +48,7 @@ body {
     text-shadow: 0px 1px, 1px 0px, 1px 0px;
     margin-left: 12vw;
     letter-spacing: 2px;
-    /* text-align: left; */
+    text-align: left;
 }
 .card-container {
     padding: 100px 0px;
@@ -124,7 +124,7 @@ body {
 .button-container {
 	position: absolute;
 	margin: auto;
-	top: -80vh;
+	top: -73vh;
 	left: 0;
 	right: 0;
 	bottom: 0;

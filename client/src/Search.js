@@ -61,11 +61,12 @@ const Search = () => {
 				<div className="search"></div>
 			</div>
       </div>
-
-	  <div className ="heading-container">
-							<h1 className = "heading-recommend"> Random Songs</h1>
-		</div>  
+  
 			{random ? (
+					<div>
+					<div className ="heading-container">
+						<h1 className = "heading-recommend"> Random Songs</h1>
+					</div>
 					<div className="container">
 					<div className="row">
 
@@ -87,32 +88,35 @@ const Search = () => {
 		
 						</div>
 					</div>
+					</div>
   			) : (
-				result ?  (     
-					<div className="container">
-					  <div className="row">
-		  
-						  {result.map((songs) => (
-							  <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12"  key ={songs.spotify_id}>
-						  
-								  <div className="profile-card-2">
-									  <img 
-										  src={songs.image_url}
-										  className="img img-responsive" onClick={() => getId(songs.id,songs.song) }/>
-										  
-									  <div className="profile-name">{songs.song}</div>
-									  <div className="profile-username">{songs.artist}</div>
-		  
-								  </div>
-							  </div>
-							  ))
-						  }
-		  
-						  </div>
-					  </div> 
-				  ) : (
-					  <h1 > loading </h1>
-				  )
+				<div>
+					<div className ="heading-container">
+						<h1 className = "heading-recommend"> Search Results </h1>
+					</div>
+						result &&  (     
+							<div className="container">
+							<div className="row">
+				
+								{result.map((songs) => (
+									<div className="col-lg-4 col-md-6 col-sm-6 col-xs-12"  key ={songs.spotify_id}>
+								
+										<div className="profile-card-2">
+											<img 
+												src={songs.image_url}
+												className="img img-responsive" onClick={() => getId(songs.id,songs.song) }/>
+												
+											<div className="profile-name">{songs.song}</div>
+											<div className="profile-username">{songs.artist}</div>
+										</div>
+									</div>
+					
+									))
+								}
+								</div>
+									</div>
+				  ) 
+				  </div>
 			  )}
 			  
       
