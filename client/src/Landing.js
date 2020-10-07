@@ -10,7 +10,7 @@ const Landing = () => {
         <div class="inner-header flex">
 
             <h1 className="heading">reZonance</h1> 
-            <h5>Tell us your favourite song and we’ll serve up with 10 similar tracks that you’ll love!</h5> 
+            <h5>Tell us your favourite song from your playlist <br />  and we’ll serve up with 10 similar tracks that you’ll love!</h5> 
             <button class="pulse"><Link to ="/search">Get Started</Link></button>
         </div>
 

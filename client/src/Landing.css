@@ -24,7 +24,8 @@ p {
   color: #333333;
 }
 .heading {
-  font-size : 6.25vw;
+  margin-bottom: 10vh;
+  font-size : 4em;
 }
 .header {
   position:relative;
@@ -56,16 +57,19 @@ p {
 }
 
 .inner-header {
+  text-align: justify;
   height:80vh;
   width:100%;
   margin: 0;
   padding: 0;
 }
  h5 {
-  font-size : 1.3em;
+   /* text-justify: "center"; */
+   line-height: 5vh;
+  font-size : 1.2em;
   font-weight: 600;
-  margin-right : auto;
-  margin-left : auto;
+  margin-right : 5vw;
+  margin-left : 5vw;
   margin-top : 12vh;
   margin-bottom : 6vh;
 }
