@@ -1,3 +1,8 @@
+[![Contributors][contributors-shield]][contributors-url] 
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -30,9 +35,9 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Predictions](#predictions)
-  * [Ambulance on Demand](#ambulance-on-demand)
-  * [Built With](#built-with)
+  * [Content Based Filtering](#Content-Based-Filtering)
+  * [Cosine Similarity](#Cosine-Similarity)
+  * [Advantages](#Advantage-over-Collaborative-Filtering)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
@@ -41,7 +46,6 @@
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
 
 
 
@@ -60,7 +64,7 @@
 
 Content-based filtering uses item features to recommend other items similar to what the user likes, based on their previous actions or explicit feedback.
 
-<img src = "STATIC_IMG/content.jpg">
+<img src = "STATIC_IMG/content.jpg" height="360" width="720">
 
 <br />
 
@@ -68,12 +72,12 @@ Content-based filtering uses item features to recommend other items similar to w
 
 Cosine similarity measures the similarity between two vectors by calculating the cosine of the angle between them. A simple visualization and the formula can be found below.
 
-<img src = "STATIC_IMG/cosine.png">
+<img src = "STATIC_IMG/cosine.png"  height="360" width="720">
 
 <br />
 
 
-## Advantage over Collaborative Filtering
+### Advantage over Collaborative Filtering
 <p>
   Recommendation engines that run on collaborative filtering recommend each item (products advertised on your site) based on user actions. The more user actions an item has, the easier it is to tell which user would be interested in it and what other items are similar to it. As time progresses, the system will be able to give more and more accurate recommendations.
 </p>
@@ -236,8 +240,5 @@ Website:  [https://rezonance.vercel.app](https://rezonance.vercel.app/)
 [license-url]: https://github.com/radiaoctive11/rezonance/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/ss1.png
-
-[node-js]: "https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"
-
+[product-screenshot]: STATIC_IMG/vid.gif
 
