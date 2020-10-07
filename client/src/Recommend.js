@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import "./App.css"
 
 const Recommend = props => {
   console.log(props);
@@ -51,7 +52,7 @@ const Recommend = props => {
   //bhai server restart krde
   return (
     <div>
-      <h3 className ="heading-recommend">Song Recommendations {props.location.state.song} </h3> 
+      <h3 className ="heading-recommend">Song Recommendations for {props.location.state.song} </h3> 
      {result && (
         <div className="container">
           <div className="row">

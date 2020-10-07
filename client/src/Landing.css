@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
 
+.landing-container {
+  overflow-y: hidden;
+  max-height: 100vh;
+}
 
 h1 {
   font-family: 'Nunito', sans-serif;
@@ -15,7 +19,9 @@ p {
   font-size:14px;
   color: #333333;
 }
-
+.heading {
+  font-size : 6.25vw;
+}
 .header {
   position:relative;
   text-align:center;
@@ -51,7 +57,12 @@ p {
   margin: 0;
   padding: 0;
 }
-
+ h5 {
+  font-size : 1.5em;
+  font-weight: 600;
+  margin-top : 12vh;
+  margin-bottom : 6vh;
+}
 .flex {
   display: flex;
   flex-direction: column;
@@ -162,13 +173,12 @@ button {
     background: none;
   border: 2px solid;
   font-family: 'Nunito', sans-serif;
-  font-weight: light;
+  font-weight: 450;
   line-height: 1;
-  font-size: 15px;
-  padding: 1.5em 2em;
+  font-size: 20px;
+  padding: 1.25em 1.8em;
 }
   
-
 button:hover, button:focus {
   border-color: var(--hover);
   color: #fff;
