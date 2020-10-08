@@ -4,6 +4,10 @@ from scripts import spotify_api
 import random
 
 def send_results():
+    """
+    selects 10 songs at random to show at the search page
+    """
+    
     df = pd.read_csv("data/id2.csv")
     randomlist = []
     for i in range(10):

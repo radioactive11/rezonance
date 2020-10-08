@@ -3,8 +3,14 @@ import pandas as pd
 from scripts import spotify_api
 
 def generate_recoms(idx):
+    """
+    fetches recommendations for given song (id)
+    """
     idx = int(idx)
+
+    # light.npy is pre-saved recommendations for all songs to optimize time
     sim = np.load("data/light.npy")
+    
     df = pd.read_csv("data/id2.csv")
     recoms_list = sim[idx, :]
     recommendation = []
