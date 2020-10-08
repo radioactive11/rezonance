@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
-import './App.css';
 import axios from "axios"
 import {useHistory} from "react-router-dom"
 import { useEffect } from 'react';
+import "../styles/App.css"
 
 const Search = () => {
   const [search,setSearch] = useState("");

@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import "./App.css"
+import "../styles/App.css"
 
 const Recommend = props => {
-  console.log(props);
   const [result,setResult] = useState([]);
   
   useEffect(() => {
     Axios.post("https://rezonance-radioactive11.herokuapp.com/recommend", {
       id: props.location.state.id
     }).then(res => {
-	//   res.data.map((elem) => elem.isPlaying = false);
       setResult(res.data);
       console.log(res.data, "result");
     });
   }, []);
 
-  //Final
+  //Play/pause and playing only one audio at a time
 
   let currentAudio = new Audio();
   let isPlaying = false;
@@ -24,32 +22,30 @@ const Recommend = props => {
   
    const playSong = (preview, id,index) => {
 
-	audio.src = preview;
+	  audio.src = preview;
 
-	if(!isPlaying)
-	{
-		isPlaying = true;
-		audio.play();
-		currentAudio.src = audio.src;
-	}
-	else
-	{
-		if(currentAudio.src === audio.src)
+		if(!isPlaying)
 		{
-			audio.pause();
-			isPlaying = false;
+			isPlaying = true;
+			audio.play();
+			currentAudio.src = audio.src;
 		}
 		else
 		{
-			audio.play()
-			currentAudio.src = audio.src;
-			isPlaying = true;
+			if(currentAudio.src === audio.src)
+			{
+				audio.pause();
+				isPlaying = false;
+			}
+			else
+			{
+				audio.play()
+				currentAudio.src = audio.src;
+				isPlaying = true;
+			}
 		}
-	}
-	
   };
 
-  //bhai server restart krde
   return (
     <div>
       <h3 className ="heading-recommend">Song Recommendations for {props.location.state.song} </h3> 
@@ -64,7 +60,6 @@ const Recommend = props => {
                 <div className="profile-card-2">
                   <img
                     src={songs.image_url}
-                    // src = "https://i.scdn.co/image/ab67616d0000b2731cbd0d5849b51c79c99e7b87"
                     className="img img-responsive"
                     onClick={() => playSong(songs.preview, songs.spotify_id,index)}
                   />
