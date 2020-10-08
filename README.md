@@ -155,13 +155,13 @@ python3 app.py
 git clone https://github.com/radioactive11/rezonance
 ```
 
-2. Install requirements (server)
+2. Install required packages
 ```sh
 cd client
 npm install
 ```
 
-3. Start Node server (by default at `localhost:5000`)
+3. Start React Development server (by default at `localhost:3000`)
 ```sh
 npm start
 ```
