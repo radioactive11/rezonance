@@ -1,14 +1,15 @@
+from numpy.lib.function_base import insert
 import requests
 import json
 import os
+import time
 import pandas as pd
 
-CLIENT_ID = os.environ["CLIENT_ID"]
-CLIENT_SECRET = os.environ["CLIENT_SECRET"]
+# CLIENT_ID = os.environ["CLIENT_ID"]
+# CLIENT_SECRET = os.environ["CLIENT_SECRET"]
 
 
-# CLIENT_ID = "50179b9e0a064ad09ffb159682151c22"
-# CLIENT_SECRET = "839cf55128424188bdae3d1083921ecf"
+
 
 
 AUTH_URL = "https://accounts.spotify.com/api/token"
@@ -29,25 +30,39 @@ headers = {
     'Authorization': 'Bearer {token}'.format(token=access_token)
 }
 
-BASE_URL = 'https://api.spotify.com/v1/search'
 
-track_id = "type=track&q=year:2020&limit=5&offset=1"
-res = requests.get("https://api.spotify.com/v1/search?{q}".format(q = track_id), headers=headers).json()
-
+main_df = pd.DataFrame(columns=["name", "spotify_id", "popularity"])
+ctr = 0
 
 
-# print(res['tracks']['items'][1]['name'])
+for off in range(1, 2001):
+    try:
+        req_param = "type=track&q=year:2020&limit=50&offset={itr}".format(itr = off)
+        res = requests.get("https://api.spotify.com/v1/search?{q}".format(q = req_param), headers=headers).json()
 
-list_dicts = []
+        list_dicts = []
 
-for i, item in enumerate(res['tracks']['items']):
-    temp_dict = {
-        "name": item['name'],
-        "spotify_id": item['id'],
-        "popularity": item['popularity']
-    }
-    list_dicts.append(temp_dict)
+        for i, item in enumerate(res['tracks']['items']):
+            temp_dict = {
+                "name": item['name'],
+                "spotify_id": item['id'],
+                "popularity": item['popularity']
+            }
+            list_dicts.append(temp_dict)
 
-df = pd.DataFrame(list_dicts)
+        df = pd.DataFrame(list_dicts)
+        main_df = main_df.append(df, ignore_index=True)
 
-df.to_csv("test.csv")
+    except:
+        main_df.to_csv("songs_2020.csv")
+
+    ctr += 50
+    print("Fetched ", ctr, " songs till now.")
+
+    if(off % 100 == 0):
+        time.sleep(10)
+    
+    
+
+
+main_df.to_csv("songs_2020.csv")
