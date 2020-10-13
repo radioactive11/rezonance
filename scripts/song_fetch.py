@@ -11,7 +11,6 @@ import pandas as pd
 
 
 
-
 AUTH_URL = "https://accounts.spotify.com/api/token"
 
 auth_response = requests.post(AUTH_URL, {
@@ -37,7 +36,7 @@ ctr = 0
 
 for off in range(1, 2001):
     try:
-        req_param = "type=track&q=year:2020&limit=50&offset={itr}".format(itr = off)
+        req_param = "type=track&q=year:2011&limit=50&offset={itr}".format(itr = off)
         res = requests.get("https://api.spotify.com/v1/search?{q}".format(q = req_param), headers=headers).json()
 
         list_dicts = []
@@ -54,15 +53,18 @@ for off in range(1, 2001):
         main_df = main_df.append(df, ignore_index=True)
 
     except:
-        main_df.to_csv("songs_2020.csv")
+        print("breaking")
+        main_df.to_csv("songs_2011.csv")
+        print(len(main_df))
+        break
 
     ctr += 50
-    print("Fetched ", ctr, " songs till now.")
+    # print("Fetched ", ctr, " songs till now.")
 
-    if(off % 100 == 0):
-        time.sleep(10)
+    if(ctr % 1000 == 0):
+        print("sleeping after fetching ", ctr, " songs.")
+        time.sleep(1)
     
     
 
-
-main_df.to_csv("songs_2020.csv")
+main_df.to_csv("songs_2011.csv")
