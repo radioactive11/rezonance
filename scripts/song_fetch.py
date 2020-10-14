@@ -9,6 +9,8 @@ import pandas as pd
 # CLIENT_SECRET = os.environ["CLIENT_SECRET"]
 
 
+CLIENT_ID = "50179b9e0a064ad09ffb159682151c22"
+CLIENT_SECRET = "839cf55128424188bdae3d1083921ecf"
 
 
 AUTH_URL = "https://accounts.spotify.com/api/token"
@@ -36,7 +38,7 @@ ctr = 0
 
 for off in range(1, 2001):
     try:
-        req_param = "type=track&q=year:2011&limit=50&offset={itr}".format(itr = off)
+        req_param = "type=track&q=year:2009&limit=50&offset={itr}".format(itr = off)
         res = requests.get("https://api.spotify.com/v1/search?{q}".format(q = req_param), headers=headers).json()
 
         list_dicts = []
@@ -54,7 +56,7 @@ for off in range(1, 2001):
 
     except:
         print("breaking")
-        main_df.to_csv("songs_2011.csv")
+        main_df.to_csv("songs_2009.csv")
         print(len(main_df))
         break
 
@@ -67,4 +69,4 @@ for off in range(1, 2001):
     
     
 
-main_df.to_csv("songs_2011.csv")
+main_df.to_csv("songs_2009.csv")
