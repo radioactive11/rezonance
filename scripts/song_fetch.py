@@ -9,8 +9,7 @@ import pandas as pd
 # CLIENT_SECRET = os.environ["CLIENT_SECRET"]
 
 
-CLIENT_ID = "50179b9e0a064ad09ffb159682151c22"
-CLIENT_SECRET = "839cf55128424188bdae3d1083921ecf"
+
 
 
 AUTH_URL = "https://accounts.spotify.com/api/token"
@@ -68,5 +67,3 @@ for off in range(1, 2001):
         time.sleep(1)
     
     
-
-main_df.to_csv("songs_2009.csv")
