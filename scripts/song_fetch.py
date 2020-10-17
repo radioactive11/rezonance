@@ -38,7 +38,7 @@ ctr = 0
 
 for off in range(1, 2001):
     try:
-        req_param = "type=track&q=year:2009&limit=50&offset={itr}".format(itr = off)
+        req_param = "type=track&q=year:2001&limit=50&offset={itr}".format(itr = off)
         res = requests.get("https://api.spotify.com/v1/search?{q}".format(q = req_param), headers=headers).json()
 
         list_dicts = []
@@ -56,7 +56,7 @@ for off in range(1, 2001):
 
     except:
         print("breaking")
-        main_df.to_csv("songs_2009.csv")
+        main_df.to_csv("raw/songs_2001.csv")
         print(len(main_df))
         break
 
@@ -67,4 +67,4 @@ for off in range(1, 2001):
         print("sleeping after fetching ", ctr, " songs.")
         time.sleep(1)
     
-    
+main_df.to_csv("raw/songs_2001.csv")
