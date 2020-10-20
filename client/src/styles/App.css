@@ -1,5 +1,4 @@
-
-@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
@@ -7,116 +6,124 @@
 a,
 a:hover,
 a:focus {
-    color: inherit;
+	color: inherit;
 }
 
 * {
-  margin : 0px;
-  padding : 0px;
+	margin: 0px;
+	padding: 0px;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background: #c31432;  /* fallback for old browsers */
-    background: hsla(0, 5%, 5%, 1);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image: -webkit-gradient(linear, left bottom, right top, from(hsla(0, 5%, 15%, 0.5)), to(hsla(0, 5%, 5%, 1)));
-	background: linear-gradient(30deg, #292b2c, 30%,  #232526);
-    min-height : 100vh;
-    background-image: -moz-linear-gradient(to right top, hsla(0, 5%, 15%, 0.5), hsla(0, 5%, 5%, 1));
-    background-repeat: no-repeat;
-    background-size :cover;
-    overflow-x : hidden;
+	font-family: 'Open Sans', sans-serif;
+	background: #c31432; /* fallback for old browsers */
+	background: hsla(0, 5%, 5%, 1);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		right top,
+		from(hsla(0, 5%, 15%, 0.5)),
+		to(hsla(0, 5%, 5%, 1))
+	);
+	background: linear-gradient(30deg, #292b2c, 30%, #232526);
+	min-height: 100vh;
+	background-image: -moz-linear-gradient(
+		to right top,
+		hsla(0, 5%, 15%, 0.5),
+		hsla(0, 5%, 5%, 1)
+	);
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow-x: hidden;
 }
-
 
 .container-fluid,
 .container {
 	max-width: 100vw;
-	margin-top : 2vh;
+	margin-top: 2vh;
 }
 .heading-container {
-	margin-top : 18vh;
+	margin-top: 18vh;
 }
 .heading-recommend {
-    font-family: "Open Sans";
-    font-weight : 900;
-    color : white;
-    font-size: 32px;
-    text-shadow: 0px 1px, 1px 0px, 1px 0px;
-    margin-left: 12vw;
-    letter-spacing: 2px;
-    text-align: left;
+	font-family: 'Open Sans';
+	font-weight: 900;
+	color: white;
+	font-size: 32px;
+	text-shadow: 0px 1px, 1px 0px, 1px 0px;
+	margin-left: 12vw;
+	letter-spacing: 2px;
+	text-align: left;
 }
 .card-container {
-    padding: 100px 0px;
-    -webkit-perspective: 1000;
-    perspective: 1000;
+	padding: 100px 0px;
+	-webkit-perspective: 1000;
+	perspective: 1000;
 }
 
 .profile-card-2 {
-    max-width: 300px;
-    max-height: 300px;
-    background-color:rgba(0, 0, 0, 0);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.0);
-    overflow: hidden;
-    position: relative;
-    margin: 30px auto;
-    cursor: pointer;
-    border-radius: 8px;
+	max-width: 300px;
+	max-height: 300px;
+	background-color: rgba(0, 0, 0, 0);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0);
+	overflow: hidden;
+	position: relative;
+	margin: 30px auto;
+	cursor: pointer;
+	border-radius: 8px;
 }
 
 .profile-card-2 img {
-    width: 100%;
+	width: 100%;
 	height: 100%;
-	background: linear-gradient(rgba(0,0,0,0), 50%,  rgba(0,0,0,1));
-    filter: brightness(57%) blur(0.25px);
-    transition: all linear 0.25s;
+	background: linear-gradient(rgba(0, 0, 0, 0), 50%, rgba(0, 0, 0, 1));
+	filter: brightness(57%) blur(0.25px);
+	transition: all linear 0.25s;
 }
 
 .profile-card-2 .profile-name {
-    position: absolute;
-    left: 20px;
-    bottom: 45px;
-    font-size: 23px;
-    color: #FFF;
-    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    font-weight: bold;
-    transition: all linear 0.25s;
+	position: absolute;
+	left: 20px;
+	bottom: 45px;
+	font-size: 23px;
+	color: #fff;
+	text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+	font-weight: bold;
+	transition: all linear 0.25s;
 }
 
 .profile-card-2 .profile-username {
-    position: absolute;
-    bottom: 25px;
-    left: 23px;
-    color: #FFF;
-    font-weight: 450;
-    font-size: 13px;
+	position: absolute;
+	bottom: 25px;
+	left: 23px;
+	color: #fff;
+	font-weight: 450;
+	font-size: 13px;
 
-    transition: all linear 0.25s;
+	transition: all linear 0.25s;
 }
 
 .profile-card-2 .profile-icons .fa {
-    margin: 5px;
+	margin: 5px;
 }
 
 .profile-card-2:hover img {
-    filter: grayscale(100%) blur(1px) brightness(40%);
+	filter: grayscale(100%) blur(1px) brightness(40%);
 }
 
 .profile-card-2:hover .profile-name {
-    bottom: 80px;
+	bottom: 80px;
 }
 
 .profile-card-2:hover .profile-username {
-    bottom: 60px;
+	bottom: 60px;
 }
 
 .profile-card-2:hover .profile-icons {
-    right: 40px;
+	right: 40px;
 }
-
 
 .button-container {
 	position: absolute;
@@ -150,7 +157,7 @@ body {
 }
 
 .button-container .search::before {
-	content: "";
+	content: '';
 	position: absolute;
 	margin: auto;
 	top: 22px;
@@ -161,11 +168,11 @@ body {
 	height: 2px;
 	background: white;
 	transform: rotate(45deg);
-	transition: all .5s;
+	transition: all 0.5s;
 }
 
 .button-container .search::after {
-	content: "";
+	content: '';
 	position: absolute;
 	margin: auto;
 	top: -5px;
@@ -176,11 +183,11 @@ body {
 	height: 25px;
 	border-radius: 50%;
 	border: 2px solid white;
-	transition: all .5s;
+	transition: all 0.5s;
 }
 
 .button-container input {
-    font-family: 'Nunito', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	position: absolute;
 	margin: auto;
 	top: 0;
@@ -192,11 +199,11 @@ body {
 	outline: none;
 	border: none;
 	background: white;
-	color:black;
+	color: black;
 	/* text-shadow: 0 0 10px white; */
 	padding: 0 80px 0 20px;
 	border-radius: 30px;
-	box-shadow:  white, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: white, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
 	transition: all 1s;
 	opacity: 0;
 	z-index: 5;

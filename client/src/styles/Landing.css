@@ -1,39 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
 
 * {
-  text-decoration: none;
+	text-decoration: none;
 }
 .landing-container {
-  overflow-y: hidden;
-  min-height: 100vh;
-  background-color : white;
+	overflow-y: hidden;
+	min-height: 100vh;
+	background-color: white;
 }
 
 h1 {
-  font-family: 'Nunito', sans-serif;
-  font-weight:300;
-  letter-spacing: 2px;
-  font-weight: 800;
-  font-size:60px;
-  
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
+	letter-spacing: 2px;
+	font-weight: 800;
+	font-size: 60px;
 }
 p {
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 1px;
-  font-size:14px;
-  color: #333333;
+	font-family: 'Lato', sans-serif;
+	letter-spacing: 1px;
+	font-size: 14px;
+	color: #333333;
 }
 .heading {
-  margin-bottom: 10vh;
-  font-size : 4em;
+	margin-bottom: 10vh;
+	font-size: 4em;
 }
 .header {
-  position:relative;
-  text-align:center;
-  background: linear-gradient(-45deg, #8E2DE2, #4A00E0, #c31432, #240b36, #1D2671, #C33764);
+	position: relative;
+	text-align: center;
+	background: linear-gradient(
+		-45deg,
+		#8e2de2,
+		#4a00e0,
+		#c31432,
+		#240b36,
+		#1d2671,
+		#c33764
+	);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
-  color:white;
+	color: white;
 }
 
 @keyframes gradient {
@@ -49,155 +56,153 @@ p {
 }
 
 .logo {
-  width:50px;
-  fill:white;
-  padding-right:15px;
-  display:inline-block;
-  vertical-align: middle;
+	width: 50px;
+	fill: white;
+	padding-right: 15px;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .inner-header {
-  text-align: justify;
-  height:80vh;
-  width:100%;
-  margin: 0;
-  padding: 0;
+	text-align: justify;
+	height: 80vh;
+	width: 100%;
+	margin: 0;
+	padding: 0;
 }
- h5 {
-   /* text-justify: "center"; */
-   line-height: 5vh;
-  font-size : 1.2em;
-  font-weight: 600;
-  margin-right : 5vw;
-  margin-left : 5vw;
-  margin-top : 12vh;
-  margin-bottom : 6vh;
+h5 {
+	/* text-justify: "center"; */
+	line-height: 5vh;
+	font-size: 1.2em;
+	font-weight: 600;
+	margin-right: 5vw;
+	margin-left: 5vw;
+	margin-top: 12vh;
+	margin-bottom: 6vh;
 }
 .flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 .waves {
-  position:relative;
-  width: 100%;
-  height:15vh;
-  margin-bottom:-7px; /*Fix for safari gap*/
-  min-height:100px;
-  max-height:150px;
+	position: relative;
+	width: 100%;
+	height: 15vh;
+	margin-bottom: -7px; /*Fix for safari gap*/
+	min-height: 100px;
+	max-height: 150px;
 }
 
 .content {
-  position:relative;
-  height:20vh;
-  text-align:center;
-  background-color: white;
+	position: relative;
+	height: 20vh;
+	text-align: center;
+	background-color: white;
 }
 
 /* Animation */
 
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+	animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
 .parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
+	animation-delay: -2s;
+	animation-duration: 7s;
 }
 .parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
+	animation-delay: -3s;
+	animation-duration: 10s;
 }
 .parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
+	animation-delay: -4s;
+	animation-duration: 13s;
 }
 .parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
+	animation-delay: -5s;
+	animation-duration: 20s;
 }
 @keyframes move-forever {
-  0% {
-   transform: translate3d(-90px,0,0);
-  }
-  100% { 
-    transform: translate3d(85px,0,0);
-  }
+	0% {
+		transform: translate3d(-90px, 0, 0);
+	}
+	100% {
+		transform: translate3d(85px, 0, 0);
+	}
 }
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
-  .waves {
-    height:2px;
-    min-height:40px;
-  }
-  .content {
-    height:3vh;
-  }
-  h1 {
-    font-size:24px;
-    font-weight: 800;
-  }
+	.waves {
+		height: 2px;
+		min-height: 40px;
+	}
+	.content {
+		height: 3vh;
+	}
+	h1 {
+		font-size: 24px;
+		font-weight: 800;
+	}
 }
 
 /* start */
 
-
-
 .fill:hover,
 .fill:focus {
-  box-shadow: inset 0 0 0 2em var(--hover);
-  text-decoration: none;
+	box-shadow: inset 0 0 0 2em var(--hover);
+	text-decoration: none;
 }
 
 .pulse:hover,
 .pulse:focus {
-  -webkit-animation: pulse 1s;
-          animation: pulse 1s;
-  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
-  text-decoration: none;
+	-webkit-animation: pulse 1s;
+	animation: pulse 1s;
+	box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+	text-decoration: none;
 }
 
 @-webkit-keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 var(--hover);
-  }
+	0% {
+		box-shadow: 0 0 0 0 var(--hover);
+	}
 }
 
 @keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 var(--hover);
-  }
+	0% {
+		box-shadow: 0 0 0 0 var(--hover);
+	}
 }
 
 .pulse {
-  margin : 0px;
-  --color: #fff;
-  --hover: #fff;
+	margin: 0px;
+	--color: #fff;
+	--hover: #fff;
 }
-
 
 button {
-  color: var(--color);
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
-    background: none;
-  border: 2px solid;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 450;
-  line-height: 1;
-  font-size: 20px;
-  padding: 1.25em 1.8em;
+	color: var(--color);
+	-webkit-transition: 0.25s;
+	transition: 0.25s;
+	background: none;
+	border: 2px solid;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 450;
+	line-height: 1;
+	font-size: 20px;
+	padding: 1.25em 1.8em;
 }
-  
-button:hover, button:focus {
-  border-color: var(--hover);
-  color: #fff;
-  text-decoration: none;
+
+button:hover,
+button:focus {
+	border-color: var(--hover);
+	color: #fff;
+	text-decoration: none;
 }
 
 code {
-  color: #e4cb58;
-  font: inherit;
+	color: #e4cb58;
+	font: inherit;
 }
