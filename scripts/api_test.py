@@ -1,9 +1,17 @@
+from numpy.lib.function_base import insert
 import requests
 import json
 import os
+import time
+import pandas as pd
 
-CLIENT_ID = os.environ["CLIENT_ID"]
-CLIENT_SECRET = os.environ["CLIENT_SECRET"]
+# CLIENT_ID = os.environ["CLIENT_ID"]
+# CLIENT_SECRET = os.environ["CLIENT_SECRET"]
+
+
+CLIENT_ID = "50179b9e0a064ad09ffb159682151c22"
+CLIENT_SECRET = "839cf55128424188bdae3d1083921ecf"
+
 
 AUTH_URL = "https://accounts.spotify.com/api/token"
 
@@ -23,10 +31,10 @@ headers = {
     'Authorization': 'Bearer {token}'.format(token=access_token)
 }
 
-BASE_URL = 'https://api.spotify.com/v1/'
 
-track_id = "34MJ07N9Bhu6iKPaxSVnCT"
-res = requests.get("https://api.spotify.com/v1/tracks/?ids={id}".format(id = track_id), headers=headers).json()
+song_id = "31sPCnzgurJnFNcvcgWNjq"
 
+media = requests.get("https://api.spotify.com/v1/tracks/{id}".format(id = song_id), headers=headers).json()
+meta = requests.get("https://api.spotify.com/v1/audio-features/{id}".format(id = song_id), headers=headers).json()
 
-print(res["tracks"][0]["preview_url"])
+print(media["artists"][0]["name"])

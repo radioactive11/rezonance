@@ -15,6 +15,7 @@ def get_recommendations(idx, cosine_sim):
     # Get the song indices
     song_index = [i[0] for i in sim_scores]
     song_index = song_index
+    
     # Return the top 10 most similar songs
     return song_index
 

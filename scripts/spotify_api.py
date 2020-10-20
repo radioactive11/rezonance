@@ -2,9 +2,13 @@ import requests
 import json
 import os
 
+# set CLIENT_ID & CLIENT_SECRET as environment vars
 
-CLIENT_ID = os.environ['CLIENT_ID']
-CLIENT_SECRET = os.environ['CLIENT_SECRET']
+# CLIENT_ID = os.environ['CLIENT_ID']
+# CLIENT_SECRET = os.environ['CLIENT_SECRET']
+
+CLIENT_ID = "50179b9e0a064ad09ffb159682151c22"
+CLIENT_SECRET = "839cf55128424188bdae3d1083921ecf"
 
 
 try:
