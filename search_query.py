@@ -5,7 +5,7 @@ def query(param):
     """
     param: input provided by user to search song/artist
     """
-    ids = pd.read_csv("data/id2.csv")
+    ids = pd.read_csv("scripts/meta/id2.csv")
 
     # mask: boolean mask to search, disabled regex to search for chars like ', ", ", / etc.
     mask = ids["search"].str.contains(param, regex=False, case=False)

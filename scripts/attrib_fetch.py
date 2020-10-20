@@ -31,11 +31,11 @@ headers = {
     'Authorization': 'Bearer {token}'.format(token=access_token)
 }
 
-df = pd.read_csv("1980_to_2020.csv") # Change this to p3/p4
+df = pd.read_csv("songs4.csv") # Change this to p3/p4
 
 
 
-for i in range(21601, len(df)):
+for i in range(0, 5000):
     try:
         song_id = df.iloc[i, 1]
 
@@ -52,11 +52,11 @@ for i in range(21601, len(df)):
         df.iloc[i, 10] = meta["instrumentalness"] # instrumentalness
         df.iloc[i, 11] = meta["liveness"] # liveness
         df.iloc[i, 12] = meta["valence"] # valence
-        df.iloc[i, 13] = media["album"]["images"][0]["url"] # image
-        df.iloc[i, 14] = media["preview_url"] # preview
+        df.iloc[i, 13] = media["preview_url"] # image
+        df.iloc[i, 14] = media["album"]["images"][0]["url"]
 
         if i%100 == 0:
-            df.to_csv("songs.csv", index=False) # change this to songs3/songs4 .csv
+            df.to_csv("songs4.csv", index=False) # change this to songs3/songs4 .csv
             print("Current song: ", str(df.iloc[i, 0]))
             print("saving")
             time.sleep(5)
@@ -65,12 +65,13 @@ for i in range(21601, len(df)):
     except Exception as e:
         print(e)
         print("error at ", str(df.iloc[i, 0]))
-        df.to_csv("songs.csv", index=False) # change this to songs3/songs4 .csv
+        df.to_csv("songs4.csv", index=False) # change this to songs3/songs4 .csv
         print(i)
         continue
 
 
-df.to_csv("songs.csv", index=False) # change this to songs3/songs4 .csv
+df.to_csv("songs4.csv", index=False) # change this to songs3/songs4 .csv
+
 
 # media = requests.get("https://api.spotify.com/v1/tracks/{id}".format(id = "3Z1kZKYfRC8iRXnYeC5sCJ"), headers=headers).json()
 # meta = requests.get("https://api.spotify.com/v1/audio-features/{id}".format(id = "3Z1kZKYfRC8iRXnYeC5sCJ"), headers=headers).json()

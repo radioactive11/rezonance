@@ -9,9 +9,9 @@ def generate_recoms(idx):
     idx = int(idx)
 
     # light.npy is pre-saved recommendations for all songs to optimize time
-    sim = np.load("data/light.npy")
+    sim = np.load("scripts/meta/light.npy")
     
-    df = pd.read_csv("data/id2.csv")
+    df = pd.read_csv("scripts/meta/id2.csv")
     recoms_list = sim[idx, :]
     recommendation = []
     for i in range(0, 10):

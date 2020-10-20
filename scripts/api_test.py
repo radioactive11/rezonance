@@ -31,10 +31,24 @@ headers = {
     'Authorization': 'Bearer {token}'.format(token=access_token)
 }
 
+df = pd.read_csv("complete/p1.csv") # Change this to p3/p4
 
-song_id = "31sPCnzgurJnFNcvcgWNjq"
+
+# print(auth_response_data)
+
+i = 1
+    
+song_id = "0VjIjW4GlUZAMYd2vXMi3b"
 
 media = requests.get("https://api.spotify.com/v1/tracks/{id}".format(id = song_id), headers=headers).json()
 meta = requests.get("https://api.spotify.com/v1/audio-features/{id}".format(id = song_id), headers=headers).json()
 
 print(media["artists"][0]["name"])
+
+
+# media = requests.get("https://api.spotify.com/v1/tracks/{id}".format(id = "3Z1kZKYfRC8iRXnYeC5sCJ"), headers=headers).json()
+# meta = requests.get("https://api.spotify.com/v1/audio-features/{id}".format(id = "3Z1kZKYfRC8iRXnYeC5sCJ"), headers=headers).json()
+
+# preview_url = media["preview_url"]
+# image = media["album"]["images"][0]["url"]
+# artist = media["artists"][0]["name"]
