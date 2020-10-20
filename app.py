@@ -1,9 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_restful import Api, Resource
 from flask_cors import CORS, cross_origin
-from show_random import send_results
-import search_query
-import recoms
+from scripts.show_random import send_results
+from scripts import search_query, recoms
 
 app = Flask(__name__)
 CORS(app, resources={r"*": {"origins": "*"}}, allow_headers="*", origin="*")
