@@ -42,7 +42,6 @@ module.exports.register = asyncHandler(async (req, res, next) => {
 module.exports.login = asyncHandler(async (req, res, next) => {
 	const { email, password } = req.body;
 	const secret = process.env.JWT_SECRET;
-	console.log(secret, 'secret');
 	const user = await User.findOne({ email });
 
 	if (!user) {
