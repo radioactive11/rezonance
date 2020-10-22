@@ -21,6 +21,8 @@ def send_results():
         artist_name = df.iloc[i, 1]
         spotify_id = df.iloc[i, 2]
         preview = df.iloc[i, 3]
+        if preview == 'not_avail':
+            preview = ""
         img = df.iloc[i, 4]
         # print(song_name, " by ", artist_name)
         temp_dict = {

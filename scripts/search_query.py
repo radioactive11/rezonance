@@ -23,6 +23,8 @@ def query(param):
         song_artist = df_results.iloc[i, 1]
         spotify_id = df_results.iloc[i, 2]
         prev_url = df_results.iloc[i, 3]
+        if prev_url == 'not_avail':
+            prev_url = ""
         image_url = df_results.iloc[i, 4]
         temp_dict = {
             "song": song_name,

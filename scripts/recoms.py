@@ -14,13 +14,15 @@ def generate_recoms(idx):
     df = pd.read_csv("scripts/meta/song_meta.csv")
     recoms_list = sim[idx, :]
     recommendation = []
-    entered = df.iloc[int(idx), 1]
-    print("Recommendations for: ", entered)
+    # entered = df.iloc[int(idx), 1]
+    # print("Recommendations for: ", entered)
     for i in range(0, 10):
         song_name = df.iloc[int(recoms_list[i]), 0]
         artist_name = df.iloc[int(recoms_list[i]), 1]
         spotify_id = df.iloc[int(recoms_list[i]), 2]
         preview = df.iloc[int(recoms_list[i]), 3]
+        if preview == 'not_avail':
+            preview = ""
         img = df.iloc[int(recoms_list[i]), 4]
         # print(song_name, " by ", artist_name)
         temp_dict = {
