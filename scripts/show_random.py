@@ -11,7 +11,7 @@ def send_results():
     df = pd.read_csv("scripts/meta/song_meta.csv")
     randomlist = []
     for i in range(10):
-        n = random.randint(0, 40000)
+        n = random.randint(0, 50000)
         randomlist.append(n)
     
     random_songs = []
