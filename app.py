@@ -17,29 +17,26 @@ class Search(Resource):
         search_results = search_query.query(param)
         return jsonify({"search_results": search_results})
 
+
 api.add_resource(Search, "/search")
 
 
 class Recommend(Resource):
-    @cross_origin()
     def post(self):
         id = request.json["id"]
         recommend = recoms.generate_recoms(id)
         return recommend
 
+
 api.add_resource(Recommend, "/recommend")
 
 
-
 class RandomSongs(Resource):
-    @cross_origin()
     def get(self):
         song_list = send_results()
         return song_list
 
 api.add_resource(RandomSongs, "/random")
 
-
 if __name__ == "__main__":
     app.run(debug=True)
-
