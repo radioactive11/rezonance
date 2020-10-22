@@ -73,8 +73,8 @@ module.exports.login = asyncHandler(async (req, res, next) => {
 // @route GET /dashboard
 // @access Private
 
-module.exports.dashboard = (req, res) => {
-	const getUser = User.findById(req.user._id);
+module.exports.dashboard = asyncHandler(async (req, res) => {
+	const getUser = await User.findById(req.user._id);
 
 	sendResponse(getUser, 'Token verified', res);
-};
+});
