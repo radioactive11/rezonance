@@ -22,7 +22,7 @@ def generate_recoms(idx):
         spotify_id = df.iloc[int(recoms_list[i]), 2]
         preview = df.iloc[int(recoms_list[i]), 3]
         img = df.iloc[int(recoms_list[i]), 4]
-        print(song_name, " by ", artist_name)
+        # print(song_name, " by ", artist_name)
         temp_dict = {
             "song_name": song_name,
             "artist_name": artist_name,

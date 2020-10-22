@@ -17,16 +17,18 @@ def send_results():
     random_songs = []
 
     for i in randomlist:
-        song_name = df.iloc[int(i), 1]
-        artist_name = df.iloc[int(i), 2]
-        spotify_id = df.iloc[int(i), 3]
-        image_url, prev_url = spotify_api.get_urls(str(spotify_id))
+        song_name = df.iloc[i, 0]
+        artist_name = df.iloc[i, 1]
+        spotify_id = df.iloc[i, 2]
+        preview = df.iloc[i, 3]
+        img = df.iloc[i, 4]
+        # print(song_name, " by ", artist_name)
         temp_dict = {
             "song_name": song_name,
             "artist_name": artist_name,
             "spotify_id": spotify_id,
-            "image_url": image_url,
-            "preview": prev_url
+            "image_url": img,
+            "preview": preview
         }
         random_songs.append(temp_dict)
     return random_songs
