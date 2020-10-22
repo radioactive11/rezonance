@@ -1,11 +1,15 @@
-const express = require('express');
-const bcrypt = require('bcrypt');
 const User = require('../models/User');
+const bcrypt = require('bcrypt');
 const ErrorResponse = require('../utils/ErrorResponse');
 const asyncHandler = require('../middleware/async');
 const sendResponse = require('../utils/sendResponse');
+const jwt = require('jsonwebtoken');
 
-module.exports.signup = asyncHandler(async (req, res, next) => {
+// @desc register user
+// @route POST /register
+// @access PUBLIC
+
+module.exports.register = asyncHandler(async (req, res, next) => {
 	const { name, email, gender, password } = req.body;
 
 	//Checking if user is already registered or not
@@ -30,3 +34,47 @@ module.exports.signup = asyncHandler(async (req, res, next) => {
 
 	sendResponse(savedUser, 'User successfully registered', res);
 });
+
+// @desc login user
+// @route POST /login
+// @access PUBLIC
+
+module.exports.login = asyncHandler(async (req, res, next) => {
+	const { email, password } = req.body;
+	const secret = process.env.JWT_SECRET;
+	console.log(secret, 'secret');
+	const user = await User.findOne({ email });
+
+	if (!user) {
+		return next(new ErrorResponse('User is not registered'));
+	}
+
+	const isMatch = await bcrypt.compare(password, user.password);
+
+	if (isMatch) {
+		const token = jwt.sign(
+			{
+				_id: user._id
+			},
+			secret
+		);
+		const { _id, email, name, gender } = user;
+
+		res.json({
+			token,
+			user: { _id, email, name, gender }
+		});
+	} else {
+		return next(new ErrorResponse('Sorry, Incorrect Email/Password', 400));
+	}
+});
+
+// @desc dashboard
+// @route GET /dashboard
+// @access Private
+
+module.exports.dashboard = (req, res) => {
+	const getUser = User.findById(req.user._id);
+
+	sendResponse(getUser, 'Token verified', res);
+};
