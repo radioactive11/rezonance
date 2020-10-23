@@ -5,6 +5,7 @@ from scripts.show_random import send_results
 from scripts import search_query, recoms
 
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
 CORS(app, resources={r"*": {"origins": "*"}}, allow_headers="*", origin="*")
 
 api = Api(app)
