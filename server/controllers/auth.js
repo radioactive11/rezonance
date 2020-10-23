@@ -42,7 +42,6 @@ module.exports.register = asyncHandler(async (req, res, next) => {
 module.exports.login = asyncHandler(async (req, res, next) => {
 	const { email, password } = req.body;
 	const secret = process.env.JWT_SECRET;
-	console.log(secret, 'secret');
 	const user = await User.findOne({ email });
 
 	if (!user) {
@@ -73,8 +72,8 @@ module.exports.login = asyncHandler(async (req, res, next) => {
 // @route GET /dashboard
 // @access Private
 
-module.exports.dashboard = (req, res) => {
-	const getUser = User.findById(req.user._id);
+module.exports.dashboard = asyncHandler(async (req, res) => {
+	const getUser = await User.findById(req.user._id);
 
 	sendResponse(getUser, 'Token verified', res);
-};
+});
