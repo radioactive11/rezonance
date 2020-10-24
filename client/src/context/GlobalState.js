@@ -3,8 +3,10 @@ import AppReducer from './AppReducer';
 import { Actions } from './Actions';
 
 const initialState = {
-	user: null,
 	token: null,
+	setToken: (token) => {},
+	user: null,
+	setUser: (user) => {},
 };
 
 export const GlobalContext = createContext(initialState);
@@ -33,10 +35,14 @@ const GlobalProvider = ({ children }) => {
 
 	const updateUser = (user) => {
 		dispatch({
-			type: Actions.UPDATE_TOKEN,
+			type: Actions.UPDATE_USER,
 			payload: user,
 		});
+		console.log(user);
 	};
+
+	// updateToken();
+	// updateUser();
 
 	return (
 		<GlobalContext.Provider
