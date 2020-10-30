@@ -6,7 +6,7 @@ const Recommend = (props) => {
 	const [result, setResult] = useState([]);
 
 	useEffect(() => {
-		Axios.post('https://rezonance11.herokuapp.com/recommend', {
+		Axios.post('https://18.141.188.196/recommend', {
 			id: props.location.state.id,
 		}).then((res) => {
 			setResult(res.data);
