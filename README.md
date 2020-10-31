@@ -53,7 +53,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-<strong>reZonance</strong> is a <strong>Content Based Recommendation Service</strong> which suggests songs similar to the one chosen by the user. It has approximately *160,000 songs* in its database and takes about *1500ms to generate recommendations*. 
+<strong>reZonance</strong> is a <strong>Content Based Recommendation Service</strong> which suggests songs similar to the one chosen by the user. It has approximately *160,000 songs* in its database and takes about *300ms to generate recommendations*. 
 
 ## Following are some core concept on which this project relies on
 
