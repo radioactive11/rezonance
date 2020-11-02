@@ -9,7 +9,7 @@ const Search = () => {
 	const [result, setResult] = useState([]);
 	const [random, setRandom] = useState([]);
 
-	const publicUrl = 'https://rezonance11.herokuapp.com.herokuapp.com/';
+	const publicUrl = 'https://18.141.188.196/';
 
 	const history = useHistory();
 
@@ -26,7 +26,7 @@ const Search = () => {
 		if (e.target.value.length >= 4 && e.target.value.length !== 0) {
 			axios
 				.post(
-					'https://rezonance11.herokuapp.com/search',
+					`${publicUrl}search`,
 					{
 						search_param: e.target.value,
 					},
